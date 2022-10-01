@@ -1,0 +1,21 @@
+--cpu Cortex-M3
+".\objects\demo.o"
+".\objects\basicmathfunctions.o"
+".\objects\bayesfunctions.o"
+".\objects\commontables.o"
+".\objects\complexmathfunctions.o"
+".\objects\controllerfunctions.o"
+".\objects\distancefunctions.o"
+".\objects\fastmathfunctions.o"
+".\objects\filteringfunctions.o"
+".\objects\matrixfunctions.o"
+".\objects\svmfunctions.o"
+".\objects\statisticsfunctions.o"
+".\objects\supportfunctions.o"
+".\objects\transformfunctions.o"
+".\objects\startup_stm32f10x_ld.o"
+".\objects\system_stm32f10x.o"
+--library_type=microlib --strict --scatter ".\Objects\PRO_1.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\PRO_1.map" -o .\Objects\PRO_1.axf

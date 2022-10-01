@@ -1,0 +1,124 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             DATA
+    2 00000000         
+    3 00000000                 AREA             EXAMPLE, CODE
+    4 00000000                 ENTRY
+    5 00000000                 EXPORT           __main
+    6 00000000         
+    7 00000000         __main
+    8 00000000         
+    9 00000000 F04F 0009       MOV              R0,#9       ; SORT number
+   10 00000004 F04F 4280       LDR              R2,=0x40000000 ;  start address
+                                                            
+   11 00000008         
+   12 00000008 F1A0 0101       SUB              R1,R0,#1    ; r1 <- 8
+   13 0000000C F04F 0404       MOV              R4,#4       ;r4 <- 4
+   14 00000010 FB01 2304       MLA              R3,R1,R4,R2 ;r3<- r1*r4+r2 = r2
+                                                            +32
+   15 00000014 F1A3 0404       SUB              R4,R3,#4    ;r4 <- r2+28
+   16 00000018         LOOPA
+   17 00000018 F102 0504       ADD              R5,R2,#4    ;r5 <- r2+4
+   18 0000001C         LOOPB
+   19 0000001C 6816            LDR              R6,[R2]
+   20 0000001E 682F            LDR              R7,[R5]
+   21 00000020 42BE            CMP              R6,R7
+   22 00000022 602E            STR              R6,[R5]
+   23 00000024 6017            STR              R7,[R2]     ;swap
+   24 00000026 F105 0504       ADD              R5,R5,#4    ; change inner addr
+                                                            ess to next one
+   25 0000002A 429D            CMP              R5,R3
+   26 0000002C D9F6            BLS              LOOPB
+   27 0000002E F102 0204       ADD              R2,R2,#4    ;change outter addr
+                                                            ess to next one
+   28 00000032 42A2            CMP              R2,R4
+   29 00000034 D9F0            BLS              LOOPA
+   30 00000036 F04F 4280       LDR              R2,=0x40000000
+   31 0000003A EA4F 0050       MOV              R0,R0,LSR #1 ;R0 <- R0>>1
+   32 0000003E F04F 0404       MOV              R4,#4       ; R4 <- 4
+   33 00000042 FB00 2304       MLA              R3,R0,R4,R2 ;r3<- r1*r4+r2
+   34 00000046         LOOPC
+   35 00000046         
+   36 00000046 6819            LDR              R1,[R3]
+   37 00000048 F04F 0064       MOV              R0,#100
+   38 0000004C E7FE            B                .
+   39 0000004E         
+   40 0000004E         
+   41 0000004E         
+   42 0000004E         
+                       
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\demo.d -o.\objects\demo.o -I.\RTE\Device\STM32F103C4 -I.
+\RTE\_Target_1 -ID:\keil_pack\ARM\CMSIS\5.7.0\CMSIS\Core\Include -ID:\keil_pack
+\ARM\CMSIS\5.7.0\CMSIS\DSP\Include -ID:\keil_pack\ARM\CMSIS\5.7.0\CMSIS\DSP\Pri
+vateInclude -ID:\keil_pack\Keil\STM32F1xx_DFP\2.1.0\Device\Include --predefine=
+"__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 531" --predefine="_RTE_
+ SETA 1" --predefine="STM32F10X_LD SETA 1" --predefine="_RTE_ SETA 1" --list=.\
+listings\demo.lst demo.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA 00000000
+
+Symbol: DATA
+   Definitions
+      At line 1 in file demo.s
+   Uses
+      None
+Comment: DATA unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+EXAMPLE 00000000
+
+Symbol: EXAMPLE
+   Definitions
+      At line 3 in file demo.s
+   Uses
+      None
+Comment: EXAMPLE unused
+LOOPA 00000018
+
+Symbol: LOOPA
+   Definitions
+      At line 16 in file demo.s
+   Uses
+      At line 29 in file demo.s
+Comment: LOOPA used once
+LOOPB 0000001C
+
+Symbol: LOOPB
+   Definitions
+      At line 18 in file demo.s
+   Uses
+      At line 26 in file demo.s
+Comment: LOOPB used once
+LOOPC 00000046
+
+Symbol: LOOPC
+   Definitions
+      At line 34 in file demo.s
+   Uses
+      None
+Comment: LOOPC unused
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 7 in file demo.s
+   Uses
+      At line 5 in file demo.s
+Comment: __main used once
+5 symbols
+340 symbols in table

@@ -1,0 +1,105 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: zhang teng, cqjtu, LIC=03C6R-KK7PR-DYYV3-AU9II-ZEPBH-VKH83
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
+Toolchain Path:  D:\keil\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+D:\keil_project\PRO_1.uvprojx
+Project File Date:  10/01/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\keil\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling demo.s...
+demo.s(43): warning: A1313W: Missing END directive at end of file
+compiling BayesFunctions.c...
+compiling ComplexMathFunctions.c...
+compiling SVMFunctions.c...
+compiling FastMathFunctions.c...
+compiling ControllerFunctions.c...
+compiling DistanceFunctions.c...
+compiling BasicMathFunctions.c...
+assembling startup_stm32f10x_ld.s...
+compiling StatisticsFunctions.c...
+compiling MatrixFunctions.c...
+compiling SupportFunctions.c...
+compiling system_stm32f10x.c...
+compiling CommonTables.c...
+compiling TransformFunctions.c...
+compiling FilteringFunctions.c...
+linking...
+.\Objects\PRO_1.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+Program Size: Code=444 RO-data=236 RW-data=0 ZI-data=1024  
+Finished: 0 information, 1 warning and 0 error messages.
+FromELF: creating hex file...
+".\Objects\PRO_1.axf" - 0 Error(s), 2 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+   * Component: DSP Variant: Source Version: 1.8.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.1.0.pack
+                Keil.STM32F1xx_DFP.2.1.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C4
+  .\RTE\_Target_1
+  D:\keil_pack\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  D:\keil_pack\ARM\CMSIS\5.7.0\CMSIS\DSP\Include
+  D:\keil_pack\ARM\CMSIS\5.7.0\CMSIS\DSP\PrivateInclude
+  D:\keil_pack\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: ARM::CMSIS:DSP:Source:1.8.0
+      Include file:  CMSIS\DSP\Include\arm_math.h
+      Source file:   CMSIS\DSP\Source\BasicMathFunctions\BasicMathFunctions.c
+      Source file:   CMSIS\DSP\Source\BayesFunctions\BayesFunctions.c
+      Source file:   CMSIS\DSP\Source\CommonTables\CommonTables.c
+      Source file:   CMSIS\DSP\Source\ComplexMathFunctions\ComplexMathFunctions.c
+      Source file:   CMSIS\DSP\Source\DistanceFunctions\DistanceFunctions.c
+      Source file:   CMSIS\DSP\Source\SupportFunctions\SupportFunctions.c
+      Source file:   CMSIS\DSP\Source\FastMathFunctions\FastMathFunctions.c
+      Source file:   CMSIS\DSP\Source\SVMFunctions\SVMFunctions.c
+      Source file:   CMSIS\DSP\Source\StatisticsFunctions\StatisticsFunctions.c
+      Source file:   CMSIS\DSP\Source\MatrixFunctions\MatrixFunctions.c
+      Source file:   CMSIS\DSP\Source\ControllerFunctions\ControllerFunctions.c
+      Source file:   CMSIS\DSP\Source\FilteringFunctions\FilteringFunctions.c
+      Source file:   CMSIS\DSP\Source\TransformFunctions\TransformFunctions.c
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Source file:   Device\Source\ARM\startup_stm32f10x_ld.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
