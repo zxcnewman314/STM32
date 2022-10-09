@@ -1,0 +1,7 @@
+#define RCC_AP2ENR	*((unsigned volatile int*)0x40021018) 
+#define GPIOA_CRL		*((unsigned volatile int*)0x40010800)
+#define	GPIOA_ODR		*((unsigned volatile int*)0x4001080C)
+#define GPIOB_CRH		*((unsigned volatile int*)0x40010C04)
+#define	GPIOB_ODR		*((unsigned volatile int*)0x40010C0C)
+#define GPIOC_CRH		*((unsigned volatile int*)0x40011004)
+#define GPIOC_ODR		*((unsigned volatile int*)0x4001100C)
